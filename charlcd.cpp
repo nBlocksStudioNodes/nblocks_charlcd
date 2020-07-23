@@ -3,7 +3,7 @@
 
 nBlock_CharCD::nBlock_CharCD(uint32_t cols, uint32_t rows, 
 					PinName pinD4, PinName pinD5,
-					PinName pinD6, PinName pinD7
+					PinName pinD6, PinName pinD7,
 					PinName pinRS, PinName pinEN)
 					/*
 					// Deprecated, not used since the library handles it
