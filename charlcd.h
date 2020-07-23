@@ -7,10 +7,10 @@
 class nBlock_CharLCD: public nBlockSimpleNode<1> {
 public:
 
-    nBlock_CharLCD(uint32_t cols, uint32_t rows, 
+    nBlock_CharLCD(uint32_t cols, uint32_t rows,
+					PinName pinRS, PinName pinEN,
 					PinName pinD4, PinName pinD5,
-					PinName pinD6, PinName pinD7,
-					PinName pinRS, PinName pinEN);
+					PinName pinD6, PinName pinD7);
     void triggerInput(uint32_t inputNumber, uint32_t value);
 	void endFrame();
 	

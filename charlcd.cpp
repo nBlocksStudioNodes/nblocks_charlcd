@@ -2,9 +2,9 @@
 #include <string.h>
 
 nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows, 
+					PinName pinRS, PinName pinEN,
 					PinName pinD4, PinName pinD5,
-					PinName pinD6, PinName pinD7,
-					PinName pinRS, PinName pinEN)
+					PinName pinD6, PinName pinD7)
 					/*
 					// Deprecated, not used since the library handles it
 					:
