@@ -13,7 +13,7 @@ nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows,
 					OutRS(pinRS), OutEN(PinEN)*/
 					{
 	// LCD type
-	uint32_t lcd_type;
+	TextLCD::LCDType lcd_type;
 	
 	// 16x2
 	if ((cols == 16) && (rows == 2))
@@ -48,6 +48,6 @@ void nBlock_CharLCD::endFrame() {
 	// If the flag is set, send text to LCD
 	if (data_received) {
 		data_received = 0;
-		_lcd.printf(TextContent);
+		_lcd->printf(TextContent);
 	}
 }
