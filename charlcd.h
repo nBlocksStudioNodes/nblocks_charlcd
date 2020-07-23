@@ -4,10 +4,10 @@
 #include "nworkbench.h"
 #include "TextLCD/TextLCD.h"
 
-class nBlock_CharCD: public nBlockSimpleNode<1> {
+class nBlock_CharLCD: public nBlockSimpleNode<1> {
 public:
 
-    nBlock_CharCD(uint32_t cols, uint32_t rows, 
+    nBlock_CharLCD(uint32_t cols, uint32_t rows, 
 					PinName pinD4, PinName pinD5,
 					PinName pinD6, PinName pinD7,
 					PinName pinRS, PinName pinEN);

@@ -1,7 +1,7 @@
 #include "charlcd.h"
 #include <string.h>
 
-nBlock_CharCD::nBlock_CharCD(uint32_t cols, uint32_t rows, 
+nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows, 
 					PinName pinD4, PinName pinD5,
 					PinName pinD6, PinName pinD7,
 					PinName pinRS, PinName pinEN)
@@ -36,7 +36,7 @@ nBlock_CharCD::nBlock_CharCD(uint32_t cols, uint32_t rows,
 	data_received = 0;
 }
 
-void nBlock_CharCD::triggerInput(uint32_t inputNumber, uint32_t value) {
+void nBlock_CharLCD::triggerInput(uint32_t inputNumber, uint32_t value) {
 	// Copy string to internal buffer
 	strcpy(TextContent, (char *)(value) );
 	// Set the flag
@@ -44,7 +44,7 @@ void nBlock_CharCD::triggerInput(uint32_t inputNumber, uint32_t value) {
 	
 }
 
-void nBlock_CharCD::endFrame() {
+void nBlock_CharLCD::endFrame() {
 	// If the flag is set, send text to LCD
 	if (data_received) {
 		data_received = 0;
