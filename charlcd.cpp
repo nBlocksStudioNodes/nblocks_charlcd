@@ -32,7 +32,7 @@ nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows,
 	_lcd = new TextLCD(pinRS, pinEN, pinD4, pinD5, pinD6, pinD7, lcd_type);
 	
 	// Reset internal buffer and  flag
-	for uint32_t i=0; i<257; i++) TextContent[i] = 0;
+	for (uint32_t i=0; i<257; i++) TextContent[i] = 0;
 	data_received = 0;
 }
 
