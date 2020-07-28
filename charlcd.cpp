@@ -29,7 +29,7 @@ nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows,
 	
 	
 	// Instantiate the library
-	_lcd = new TextLCD(pinRS, pinEN, pinD4, pinD5, pinD6, pinD7, lcd_type);
+	_lcd = new ModifiedTextLCD(pinRS, pinEN, pinD4, pinD5, pinD6, pinD7, lcd_type);
 	
 	// Reset internal buffer and  flag
 	for (uint32_t i=0; i<257; i++) TextContent[i] = 0;
@@ -48,6 +48,8 @@ void nBlock_CharLCD::endFrame() {
 	// If the flag is set, send text to LCD
 	if (data_received) {
 		data_received = 0;
+		// Reset cursor to start
+		_lcd->locate(0,0);
 		_lcd->printf(TextContent);
 	}
 }

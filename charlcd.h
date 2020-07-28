@@ -4,6 +4,37 @@
 #include "nworkbench.h"
 #include "TextLCD/TextLCD.h"
 
+
+/**
+ *  Modified version of TextLCD to remove the automatic line break
+ *  when reaching the end of line
+ */
+class ModifiedTextLCD: public TextLCD {
+public:
+	ModifiedTextLCD(PinName rs, PinName e, PinName d4, PinName d5, PinName d6, PinName d7, TextLCD::LCDType type = TextLCD::LCD16x2):
+	TextLCD(rs, e, d4, d5, d6, d7, type) {}
+protected:
+	virtual int _putc(int value) {
+		if (value == '\n') {
+			_column = 0;
+			_row++;
+			if (_row >= rows()) {
+				_row = 0;
+			}
+		} else {
+			// Only write the char to LCD if we did not yet reach
+			// the end of current line. Next characters are ignored
+			if (_column < columns()) {
+				character(_column, _row, value);
+				_column++;
+			}
+			// There is no else, just ignore
+		}
+		return value;
+	}
+};
+
+
 class nBlock_CharLCD: public nBlockSimpleNode<1> {
 public:
 
@@ -28,7 +59,7 @@ private:
 	*/
 	
 	// LCD library instance
-	TextLCD * _lcd;
+	ModifiedTextLCD * _lcd;
 	
 	// Buffer to store the string
 	char TextContent[257]; // Up to 64x4 + NULL
