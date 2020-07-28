@@ -11,7 +11,9 @@ this message will cause the LCD to jump to second line preserving the
 contents of the first line, and then print "Value: " and the value.
 
 To clear the characters after the string, use spaces, e.g:
-```"Value: %d            "```
+```
+"Value: %d            "
+```
 
 If a string longer than the LCD row is sent, the extra characters are 
 just ignored.
