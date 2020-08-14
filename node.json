@@ -1,0 +1,77 @@
+{
+	"category": "LCD",
+	"name": "CharLCD",
+	"inputs": 1,
+	"outputs": 0,
+	"parameters": [
+	
+	
+	
+		{
+			"name": "Characters",
+			"type": "int",
+			"default": "20",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "Rows",
+			"type": "int",
+			"default": "4",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "RS",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "EN",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "D4",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "D5",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "D6",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		},
+		{
+			"name": "D7",
+			"type": "raw",
+			"default": "",
+			"options": [""],
+			"value": ""
+		}
+	],
+	"labels": {
+		"input": ["Data"],
+		"output": []
+	},
+	"schematic_pins": {
+		"inputs": [1],
+		"outputs": []
+	},
+	"repository": "https://github.com/nblocksStudio/nblocks_charlcd",
+	"revision": ""
+}
