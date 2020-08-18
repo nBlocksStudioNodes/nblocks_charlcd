@@ -42,22 +42,11 @@ public:
 					PinName pinRS, PinName pinEN,
 					PinName pinD4, PinName pinD5,
 					PinName pinD6, PinName pinD7);
-    void triggerInput(uint32_t inputNumber, uint32_t value);
+    void triggerInput(nBlocks_Message message);
 	void endFrame();
 	
    
 private:
-	// GPIO
-	/*
-	// Deprecated, not used as the library handles it
-	DigitalOut OutD0;
-	DigitalOut OutD1;
-	DigitalOut OutD2;
-	DigitalOut OutD3;
-	DigitalOut OutRS;
-	DigitalOut OutEN;
-	*/
-	
 	// LCD library instance
 	ModifiedTextLCD * _lcd;
 	

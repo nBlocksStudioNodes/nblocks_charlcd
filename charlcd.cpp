@@ -5,12 +5,6 @@ nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows,
 					PinName pinRS, PinName pinEN,
 					PinName pinD4, PinName pinD5,
 					PinName pinD6, PinName pinD7)
-					/*
-					// Deprecated, not used since the library handles it
-					:
-					OutD0(pinD0), OutD1(pinD1),
-					OutD0(pinD2), OutD1(pinD3),
-					OutRS(pinRS), OutEN(PinEN)*/
 					{
 	// LCD type
 	TextLCD::LCDType lcd_type;
@@ -36,9 +30,12 @@ nBlock_CharLCD::nBlock_CharLCD(uint32_t cols, uint32_t rows,
 	data_received = 0;
 }
 
-void nBlock_CharLCD::triggerInput(uint32_t inputNumber, uint32_t value) {
+void nBlock_CharLCD::triggerInput(nBlocks_Message message) {
+	uint32_t inputNumber = message.inputNumber;
+	char * value = message.stringValue;
+	
 	// Copy string to internal buffer
-	strcpy(TextContent, (char *)(value) );
+	strcpy(TextContent, value );
 	// Set the flag
 	data_received = 1;
 	
